@@ -50,7 +50,6 @@ class UserTable extends Component {
         const myChangeHandler = (event) => {
             console.log(event.target.value);
         };
-        console.log("Home", users);
         return (
             <>
                 <Jumbotron>
@@ -77,7 +76,7 @@ class UserTable extends Component {
                     </thead>
                     <tbody>
                     {users.map(item => (
-                        <tr>
+                        <tr key={item.id}>
                             <td>1</td>
                             <td>{item.name}</td>
                             <td>{item.email}</td>

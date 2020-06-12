@@ -58,7 +58,6 @@ function User() {
             tags: ['cool', 'teacher'],
         },
     ];
-    console.log(user);
     return (
 
         <>

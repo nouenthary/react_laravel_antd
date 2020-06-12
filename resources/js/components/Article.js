@@ -1,18 +1,50 @@
 import React, {useEffect} from 'react';
+import {Table} from "antd";
 
 const Article = () => {
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/articles").then((reponse)=> {
-            console.log("HHH",reponse)
+        fetch("http://localhost:8000/api/articles").then((response) => {
+            const res = Promise.resolve(response.data)
+            console.log(res)
         })
-    })
+    });
 
     return (
-        <div>
-            Article
-        </div>
+        <Table dataSource={dataSource} columns={columns} />
     );
 }
 
+const dataSource = [
+    {
+        key: '1',
+        name: 'Mike',
+        age: 32,
+        address: '10 Downing Street',
+    },
+    {
+        key: '2',
+        name: 'John',
+        age: 42,
+        address: '10 Downing Street',
+    },
+];
+
+const columns = [
+    {
+        title: 'Name',
+        dataIndex: 'name',
+        key: 'name',
+    },
+    {
+        title: 'Age',
+        dataIndex: 'age',
+        key: 'age',
+    },
+    {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+    },
+];
 export default Article;

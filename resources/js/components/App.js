@@ -37,7 +37,6 @@ function App() {
                         </Breadcrumb>
                         <div style={{background: '#fff', padding: 24, minHeight: 500}}>
                             <UserTable/>
-                            <User/>
                             <Article/>
                         </div>
                     </Content>
